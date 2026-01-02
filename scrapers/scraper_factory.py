@@ -3,6 +3,7 @@
 from typing import Dict, List
 from scrapers.base_scraper import BaseScraper
 from scrapers.hybrid_scraper import HybridScraper
+from scrapers.online_scholarships_scraper import OnlineScholarshipsScraper
 from scrapers.specialized_hybrids import (
     DAADHybrid,
     HECHybrid,
@@ -105,6 +106,15 @@ class ScraperFactory:
     def get_scrapers_by_country(country: str) -> List[BaseScraper]:
         """Get scrapers relevant to specific country"""
         all_scrapers = ScraperFactory.get_all_scrapers()
+        
+        # Always include the reliable online scholarships scraper
+        online_config = {
+            'name': 'Online Scholarships (RSS)',
+            'url': 'https://scholars4dev.com',
+            'enabled': True
+        }
+        online_scraper = OnlineScholarshipsScraper(online_config)
+        all_scrapers.insert(0, online_scraper)  # Add at the beginning
         
         # Country-specific filtering
         country_map = {
