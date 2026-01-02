@@ -2,7 +2,12 @@
 
 from typing import List, Dict
 from scrapers.hybrid_scraper import HybridScraper
-from bs4 import BeautifulSoup
+
+try:
+    from bs4 import BeautifulSoup
+except ImportError:
+    BeautifulSoup = None
+
 import re
 import json
 

@@ -11,7 +11,12 @@ Hybrid scraper that tries multiple methods in priority order:
 
 from typing import List, Dict, Optional
 from scrapers.base_scraper import BaseScraper
-from bs4 import BeautifulSoup
+
+try:
+    from bs4 import BeautifulSoup
+except ImportError:
+    BeautifulSoup = None
+
 import feedparser
 import json
 import re

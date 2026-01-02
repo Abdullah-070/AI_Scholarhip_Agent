@@ -2,7 +2,11 @@
 
 from typing import List, Dict
 from scrapers.base_scraper import BaseScraper
-from bs4 import BeautifulSoup
+
+try:
+    from bs4 import BeautifulSoup
+except ImportError:
+    BeautifulSoup = None
 
 class FulbrightScraper(BaseScraper):
     """Scraper for Fulbright Foreign Student Program"""
