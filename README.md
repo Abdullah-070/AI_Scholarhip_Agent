@@ -32,20 +32,6 @@ Scholarships are scored (0-100%) based on:
 
 Visit: **[AI Scholarship Finder on Streamlit Cloud](https://scholarhip-agent.streamlit.app/)**
 
-## 📦 Installation
-
-```bash
-# Clone repository
-git clone https://github.com/Abdullah-070/AI_Scholarhip_Agent.git
-cd AI_Scholarhip_Agent
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Run app
-streamlit run app.py
-```
-
 ## 💻 Tech Stack
 
 - **Frontend**: Streamlit
@@ -67,6 +53,3 @@ streamlit run app.py
 - Youth Opportunities
 - ScholarshipPortal
 
-## 📄 License
-
-MIT License
